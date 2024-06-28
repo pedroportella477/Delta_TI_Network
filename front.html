@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta TI Network</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #main-header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        #main-header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .main-content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .main-content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .main-content table, th, td {
+            border: 1px solid #ddd;
+        }
+        .main-content table th, .main-content table td {
+            padding: 8px;
+            text-align: left;
+        }
+        .main-content table th {
+            background-color: #333;
+            color: white;
+        }
+        .main-content form {
+            margin-top: 20px;
+        }
+        .main-content form input, .main-content form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .main-content form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <h1>Delta TI Network</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <h2>Hosts</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome do Host</th>
+                    <th>Endereço IP</th>
+                    <th>Ação</th>
+                </tr>
+                {% for host in hosts %}
+                <tr>
+                    <td>{{ host[0] }}</td>
+                    <td>{{ host[1] }}</td>
+                    <td>{{ host[2] }}</td>
+                    <td><a href="{{ url_for('delete_host', id=host[0]) }}">Excluir</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h2>Adicionar Host</h2>
+            <form method="POST" action="{{ url_for('add_host') }}">
+                <input type="text" name="host_name" placeholder="Nome do Host" required>
+                <input type="text" name="ip_address" placeholder="Endereço IP" required>
+                <textarea name="message_down" placeholder="Mensagem para quando o IP cair" required></textarea>
+                <textarea name="message_up" placeholder="Mensagem para quando o IP retornar" required></textarea>
+                <button type="submit">Adicionar Host</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; <script>document.write(new Date().getFullYear())</script> Desenvolvido por Pedro Henrique Portella
+    </footer>
+</body>
+</html>

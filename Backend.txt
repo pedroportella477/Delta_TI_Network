@@ -1,0 +1,5 @@
+Instale as dependências necessárias:
+
+
+Copiar código
+pip install Flask Flask-MySQLdb requests

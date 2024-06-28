@@ -1,0 +1,14 @@
+Execução
+Para rodar a aplicação:
+
+Certifique-se de que o MySQL está rodando e o banco de dados está configurado.
+Execute o script app.py:
+sh
+Copiar código
+
+python app.py
+
+Agora, sua aplicação estará rodando no localhost:5000. Você pode acessar a interface web, adicionar hosts, e o sistema fará ping para os IPs cadastrados e enviará notificações via Telegram.
+
+Nota
+Lembre-se de substituir SEU_TELEGRAM_BOT_TOKEN e SEU_CHAT_ID pelas suas credenciais do Telegram. O sistema está configurado para pingar a cada 60 segundos. Você pode ajustar esse intervalo conforme necessário.
