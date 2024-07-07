@@ -9,3 +9,5 @@ Notificações via Telegram: Envio de mensagens quando um dispositivo fica offli
 Histórico de Status: Armazenamento de mudanças de status na tabela history, com visualização das últimas 72 horas.
 Atualização Automática: A página principal atualiza automaticamente o status dos dispositivos a cada 20 segundos.
 Estou na luta para terminar esse projeto e evoluir
+Créditos
+Desenvolvido por Pedro Henrique Portella.
